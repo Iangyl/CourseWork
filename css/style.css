@@ -34,3 +34,25 @@ body
 #nav-ul a:hover{
     background-color: #0797b8;
 }
+#log-in-block
+{
+    position: absolute;
+    left: 1396px;
+    top: 26px;
+    z-index: 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 55%;
+}
+#log-in-block a
+{
+    text-decoration:  none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11pt;
+}
+#admin-icon
+{
+    position: absolute;
+    z-index: 1;
+    left: 1494px;
+    top: 35px;
+}
