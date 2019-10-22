@@ -56,3 +56,10 @@ body
     left: 1494px;
     top: 35px;
 }
+.article-titleBox{
+    position: relative;
+    left: 44%;
+    font-family: 'Roboto';
+    font-size: 24pt;
+    top: 40px;  
+}
