@@ -1,11 +1,15 @@
 body
 {
-    width: 1536px;
+    width: 1519.2px;
+}
+.container{
+    position: relative;
+    overflow: hidden;
 }
 #main-img
 {
     position: relative;
-    width: 1536px;
+    width: 1519.2px;
 }
 .header-container-nav
 {
@@ -56,10 +60,36 @@ body
     left: 1494px;
     top: 35px;
 }
-.article-titleBox{
+#rel-block{
     position: relative;
-    left: 44%;
-    font-family: 'Roboto';
-    font-size: 24pt;
-    top: 40px;  
+    background-image: url("../WebPresentation/Слайд1.GIF");
+    width: 1280px;
+    height: 720px;
+    animation: presentation1 48s ease infinite;
+}
+#who-we-are{
+
+    position: relative;
+    display: flex;
+    background-color: #ebeced;
+    padding-top: 80px;
+    overflow: hidden;
+    justify-content: center;
+}
+@keyframes presentation1{
+    0%{
+        background-image: url("../WebPresentation/Слайд1.GIF");
+    }
+    25%{
+        background-image: url("../WebPresentation/Слайд2.GIF");
+    }
+    50%{
+        background-image: url("../WebPresentation/Слайд3.GIF");
+    }
+    75%{
+        background-image: url("../WebPresentation/Слайд4.GIF");
+    }
+    100%{
+        background-image: url("../WebPresentation/Слайд1.GIF");
+    }    
 }
