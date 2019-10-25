@@ -10,6 +10,31 @@ body
 {
     position: relative;
     width: 1519.2px;
+    height: 655.5px;
+}
+#service-names-container{
+    position: absolute;
+    display: flex;
+    top: 0.0001%;
+    left: 5%;
+    flex-direction: column;
+}
+#service-name
+{
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    font-size: 124pt;
+    font-weight: bold;
+    color: #2C3E50;
+}
+#service-slogan
+{
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28pt;
+    font-weight: normal;
+    color: #2C3E50;
+    left: 40%;
 }
 .header-container-nav
 {
@@ -41,11 +66,10 @@ body
 #log-in-block
 {
     position: absolute;
-    left: 1396px;
+    left: 1392px;
     top: 26px;
     z-index: 1;
     padding: 10px 10px 10px 10px;
-    border-radius: 55%;
 }
 #log-in-block a
 {
@@ -57,39 +81,31 @@ body
 {
     position: absolute;
     z-index: 1;
-    left: 1494px;
+    left: 1490px;
     top: 35px;
 }
-#rel-block{
-    position: relative;
-    background-image: url("../WebPresentation/Слайд1.GIF");
-    width: 1280px;
-    height: 720px;
-    animation: presentation1 48s ease infinite;
-}
-#who-we-are{
-
+/* 
+   above - header
+   under - section
+*/
+#first-block{
     position: relative;
     display: flex;
-    background-color: #ebeced;
-    padding-top: 80px;
-    overflow: hidden;
-    justify-content: center;
+    flex-direction: column;
 }
-@keyframes presentation1{
-    0%{
-        background-image: url("../WebPresentation/Слайд1.GIF");
-    }
-    25%{
-        background-image: url("../WebPresentation/Слайд2.GIF");
-    }
-    50%{
-        background-image: url("../WebPresentation/Слайд3.GIF");
-    }
-    75%{
-        background-image: url("../WebPresentation/Слайд4.GIF");
-    }
-    100%{
-        background-image: url("../WebPresentation/Слайд1.GIF");
-    }    
+#first-block:first-child{
+    position: relative;
+    padding-top: 80px;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28pt;
+    font-weight: 700;
+}
+#first-block:nth-child(2){
+    position: relative;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-weight: normal;
 }
