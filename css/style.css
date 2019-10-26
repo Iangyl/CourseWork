@@ -88,12 +88,15 @@ body
    above - header
    under - section
 */
+section{
+    background-color: rgb(235, 235, 236);
+}
 #first-block{
     position: relative;
     display: flex;
     flex-direction: column;
 }
-#first-block:first-child{
+#first-block div:nth-child(1){
     position: relative;
     padding-top: 80px;
     justify-content: center;
@@ -102,10 +105,46 @@ body
     font-size: 28pt;
     font-weight: 700;
 }
-#first-block:nth-child(2){
+#first-block div:nth-child(2){
     position: relative;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 12pt;
+    font-size: 16pt;
     font-weight: normal;
+    letter-spacing: 5pt;
+    margin-top: 20px;
+}
+#block-of-benefits{
+    position: relative;
+}
+#list-of-benefits{
+    display: flex;
+}
+.class-of-benefits
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#list-of-benefits div:nth-child(1){
+    
+}
+#list-of-benefits div:nth-child(2){
+    
+}
+#list-of-benefits div:nth-child(3){
+    
+}
+.img-benefits{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    padding: 0px;
+}
+#first-benefit{
+    font-family: "Roboto";
+    font-size: 48pt;
+    background-color: pink;
+    text-align: center;
 }
