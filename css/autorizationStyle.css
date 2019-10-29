@@ -1,15 +1,59 @@
-.login-form{
-    position: relative;
+body{
     display: flex;
-    border: 4px solid black;
-    width: 400px;
-    flex-direction: column;
+    background-image: url('../pictures/isometropolis.jpg');
+    justify-content: center;
+}
+h1{
+    font-family: 'Roboto';
+}
+#text{
+    width: 300px;
+    font-family: 'Roboto';
+}
+#pwd{
+    width: 300px;
+    font-family: 'Roboto';
+}
+#button{
+    width: 150px;
+    font-family: 'Roboto';
+}
+.form-login{
+    margin-top: 12%;
+    width: 450px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15%;
+    padding: 10px 10px;
+    animation: opac 15s ease-in infinite;
 }
 .header{
     position: relative;
     display: flex;
+    flex-direction: column;
 }
-.content{
+.header :first-child{
+    text-align: center;
+}
+.inputClass{
+    padding-left: 5px;
+}
+.footer{
     position: relative;
     display: flex;
+    justify-content: center;
+}
+#button{
+    margin-bottom: 15px;
+}
+@keyframes opac{
+    0%{
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    50%{
+        background-color: rgba(158, 201, 241, 0.5);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 0.7);
+    }
 }
