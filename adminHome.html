@@ -1,24 +1,358 @@
+<?php require_once 'php/db.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link type="stylesheet" href=""/>
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/adminHomestyle.css" type="text/css" media="all">
+    <title>Admin page</title>
 </head>
 <body>
-    <div>
-        <section>
-            <h1>Welcome!</h1>
-            <span>This is administration page. If you want to leave click here.</span>
-        </section>
+    <div class="container">
         <aside>
             <nav>
-                <ul>
-
+                <ul class="list-nav">
+                   <li><a href="#">Airlines</a></li>
+                   <li><a href="#">Cities</a></li>
+                   <li><a href="#">Clients</a></li>
+                   <li><a href="#">Flight</a></li>
+                   <li><a href="#">Plane</a></li>
+                   <li><a href="#">Sales log</a></li>
+                   <li><a href="#">Service class</a></li>
+                   <li><a href="index.html">Exit</a></li> 
                 </ul>
             </nav>    
         </aside>
+        <article id="welcome-block">
+            <h1 id="ave">Welcome!</h1>
+            <span id="prompt">This is administration page. If you want to leave click here.</span>
+            <a href="index.html">
+                <input type="button" class="btn btn-primary" id="button" value="Homepage" />
+            </a>
+        </article>
+        <article id="airlines-block">
+            <h2>Table: Airlines</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertAirlines.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list">
+                        <li>
+                            <input type="text" name="Name" placeholder="Введіть назву" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Owner" placeholder="Власник" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Adress" placeholder="Адреса компанії" class="input-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from airlines");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <td>{$row['Name']}</td>
+                    <td>{$row['Owner']}</td>
+                    <td>{$row['Adress']}</td>
+                    <td>"
+                        ?>
+                        <form action='delete.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='change.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+        <article id="cities-block">
+            <h2>Table: Cities</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertCities.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list">
+                        <li>
+                            <input type="text" name="Name" placeholder="Назва міста" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Country" placeholder="Назва країни" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Airport" placeholder="Назва аеропорту" class="input-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from airlines");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <td>{$row['Name']}</td>
+                    <td>{$row['Owner']}</td>
+                    <td>{$row['Adress']}</td>
+                    <td>"
+                        ?>
+                        <form action='delete.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='change.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+        <article id="clients-block">
+            <h2>Table: Cities</h2>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from clients");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <td>{$row['Name']}</td>
+                    <td>{$row['Owner']}</td>
+                    <td>{$row['Adress']}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>"
+                    ?>
+                        <form action='delete.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                             <input type='submit' name='del' value='Видалити' class='btn'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='change.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+        <article id="flights-block">
+            <h2>Table: Flight</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertCities.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list extra-list">
+                        <li>
+                            <input type="text" name="FlightNumber" placeholder="Номер польоту" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="CityOfDeparture" placeholder="Місто відльоту" class="input-control extra-control" required/>
+                         </li>
+                        <li>
+                            <input type="text" name="ArrivalCity" placeholder="Місто прильоту" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="datetime-local" name="DateOfDeparture" placeholder="Дата відльоту" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="datetime-local" name="DateOfArrival" placeholder="Дата прильоту" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="IdAirline" placeholder="Авіакомпанія" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="IdPlane" placeholder="Літак" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="IdServiceClass" placeholder="Клас обслуговування" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="FullPrice" placeholder="Остаточна ціна" class="input-control extra-control" required/>
+                        </li>    
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from airlines");
+                echo '<table id="flights-table">';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <th>Номер польоту</th>
+                    <th>Місто відльоту</th>
+                    <th>Місто прильоту</th>
+                    <th>Дата відльоту</th>
+                    <th>Дата прильоту</th>
+                    <th>Авіакомпанія</th>
+                    <th>Літак</th>
+                    <th>Клас обслуговування</th>
+                    <th>Ціна</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="datetime-local" class="table-input"></td>
+                    <td><input type="datetime-local" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td><input type="text" class="table-input"></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>{$row['Name']}</td>
+                    <td>{$row['Owner']}</td>
+                    <td>{$row['Adress']}</td>
+                    <td>Дата відльоту</td>
+                    <td>Дата прильоту</td>
+                    <td>Авіакомпанія</td>
+                    <td>Літак</td>
+                    <td>Клас обслуговування</td>
+                    <td>Ціна</td>
+                    <td>"
+                        ?>
+                        <form action='delete.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='change.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+        <article id="planes-block">
+            <h2>Table: Plane</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertPlanes.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list extra-list">
+                        <li>
+                            <input type="text" name="Model" placeholder="Назва та модель" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="date" name="Edition" placeholder="Випуск" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="E-quantity" placeholder="К-сть економ-класу" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="B-quantity" placeholder="К-сть бізнес-класу" class="input-control extra-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="P-quantity" placeholder="К-сть преміум-класу" class="input-control extra-control" required/>
+                        </li>                
+                        <li>
+                            <input type="text" name="AirLine" placeholder="Авіакомпанія" class="input-control extra-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from airlines");
+                echo '<table id="planes-table">';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <th>Модель</th>
+                    <th>Випуск</th>
+                    <th>Економ-місця</th>
+                    <th>Бізнес-місця</th>
+                    <th>Преміум-місця</th>
+                    <th>Авіакомпанія</th>
+                    </tr>
+                    <tr>
+                    <td>{$row['Name']}</td>
+                    <td>{$row['Owner']}</td>
+                    <td>{$row['Adress']}</td>
+                    <td>Business</td>
+                    <td>Premium</td>
+                    <td>Air Company</td>
+                    <td>"
+                        ?>
+                        <form action='delete.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='change.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
     </div>    
 </body>
 </html>

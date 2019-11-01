@@ -1,0 +1,234 @@
+.container
+{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+#ave{
+    font-family: 'Roboto';
+    font-size: 140pt;
+    color: rgb(49, 49, 66);
+    margin-left: 15%;
+    margin-top: 150px;
+}
+.list-nav{
+    height: 100vh;
+    overflow-y: auto;
+}
+.list-nav li{
+    margin-bottom: 20px;
+}
+body{
+    background-color: rgb(184, 180, 176);
+}
+article{
+    position: relative;
+    display: flex;
+    left: 294.25px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+aside{
+    position: fixed;
+    height: 100%;
+    background-color: rgb(40, 40, 119);
+    z-index: 5;
+}
+#button{
+    width: 300px;
+    height: 100px;
+    border: 2px solid rgba(0, 0, 255, 0.247);
+    background: rgba(0, 0, 255, 0.596);
+    font-family: 'Roboto';
+    font-size: 18pt;
+    font-weight: bold;
+    color: white;
+    margin-left: 30%;
+    margin-top: 20px;
+}
+#prompt{
+    font-family: 'Roboto';
+    font-size: 18pt;
+    color: rgb(49, 49, 66);
+    margin-left: 40px;
+}
+.list-nav a:hover{
+    padding: 0px;
+    background-color: blue;
+    padding: 20px;
+}
+.list-nav a{
+    display: block;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 32pt;
+    font-weight: bolder;
+    color: white;
+    padding: 20px;
+}
+h2{
+    font-family: 'Roboto';
+    font-size: 78pt;
+    color: rgb(49, 49, 66);
+    margin: 40px 0;
+    margin-left: 40px;
+}
+.h3-fix{
+    font-family: 'Roboto';
+    font-size: 42pt;
+    color: rgb(49, 49, 66);
+    margin: 40px 0;
+    margin-left: 40px;
+}
+#welcome-block{
+    display: none;
+}
+/* table style - default style */
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 18px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+    margin-left: 20px;
+}
+th {
+    background: rgb(169, 235, 215);
+    color: white;
+    text-shadow: 0 1px 1px #2D2020;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+td {
+    padding: 10px 20px;
+    background: rgba(248, 228, 145, 0.822);
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
+.input-container{
+    position: relative;
+    left: 30px;
+}
+.input-control{
+    width: 270px;
+    padding: 20px;
+    margin: 20px 40px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    outline: none;
+}
+.btn{
+    width: 250px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(128, 255, 0, 0.781);
+    color: white;
+    font-family: 'Roboto';
+    font-size: 14pt;
+    font-weight: 600;
+    margin-left: 467px;
+    outline: none;
+}
+.btn-search{
+    width: 75px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgba(0, 183, 255, 0.781);
+    color: white;
+    font-family: 'Roboto';
+    font-size: 11pt;
+    font-weight: 600;
+    outline: none;
+}
+.input-list{
+    display: flex;
+}
+/*block airlines */
+#airlines-block{
+    display: block;
+}
+#airlines-block{
+    display: none;
+}
+/*block cities*/
+#cities-block{
+    display: block;
+}
+#cities-block{
+    display: none;
+}
+/*block clients*/
+#clients-block{
+    display: block;
+}
+#clients-block{
+    display: none;
+}
+/*block flights*/
+#flights-block{
+    display: block;
+}
+.extra-list
+{
+    flex-direction: column;
+}
+.extra-control{
+    width: 500px;
+}
+#flights-table{
+    font-size: 9pt;
+}
+#flights-table th{
+    padding: 10px 0;
+    text-align: center; 
+}
+#flights-table td{
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid white;
+}
+.table-input{
+    width: 114px;
+}
+#flights-block{
+    display: none;
+}
+/* planes block*/
+#planes-block{
+    display: block;
+}/*
+#planes-table{
+    font-size: 11pt;
+}
+#planes-table th{
+    padding: 5px 10px;
+}
+#planes-table td{
+    padding: 5px 10px;
+    text-align: center;
+}

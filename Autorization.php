@@ -10,7 +10,7 @@
         <title>Managment</title>
     </head>
     <body>
-        <form name="login-form" class="form-login" action="" method="POST">
+        <form name="login-form" class="form-login" action="php/autorization.php" method="post">
             <div class="header">
                 <h1>Autorization</h1>
             </div>
