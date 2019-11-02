@@ -9,20 +9,25 @@
     <link type="stylesheet" href=""/>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/adminHomestyle.css" type="text/css" media="all">
+    <script src="js/adminHomeTransitions.js" type="text/javascript"></script>
+    <script>
+        let a1 = document.getElementById('a1');
+        a1.onclick = transitionToAirlines();
+    </script>
     <title>Admin page</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <aside>
             <nav>
                 <ul class="list-nav">
-                   <li><a href="#">Airlines</a></li>
-                   <li><a href="#">Cities</a></li>
-                   <li><a href="#">Clients</a></li>
-                   <li><a href="#">Flight</a></li>
-                   <li><a href="#">Plane</a></li>
-                   <li><a href="#">Sales log</a></li>
-                   <li><a href="#">Service class</a></li>
+                   <li><a id="a1" href="#">Airlines</a></li>
+                   <li><a onclick="transitionToCities()" href="#">Cities</a></li>
+                   <li><a onclick="transitionToClients()" href="#">Clients</a></li>
+                   <li><a onclick="transitionToFlights()" href="#">Flight</a></li>
+                   <li><a onclick="transitionToPlanes()" href="#">Plane</a></li>
+                   <li><a onclick="transitionToSalesLog()" href="#">Sales log</a></li>
+                   <li><a onclick="transitionToService()" href="#">Service class</a></li>
                    <li><a href="index.html">Exit</a></li> 
                 </ul>
             </nav>    
@@ -60,23 +65,30 @@
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "<tr>
+                    <th>Назва компанії</th>
+                    <th>Власник</th>
+                    <th>Адреса</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
                     <td>{$row['Name']}</td>
                     <td>{$row['Owner']}</td>
                     <td>{$row['Adress']}</td>
                     <td>"
                         ?>
-                        <form action='delete.php' method='post'>
+                        <form action='deleteAirlines.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn'/>
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                         <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='change.php' method='post'>
+                        <form action='changeAirlines.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
                     <?
                         echo "
@@ -107,28 +119,35 @@
             </form>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from airlines");
+                $result = $pdo->query("select * from cites");
                 echo '<table>';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "<tr>
-                    <td>{$row['Name']}</td>
-                    <td>{$row['Owner']}</td>
-                    <td>{$row['Adress']}</td>
+                    <th>Назва міста</th>
+                    <th>Назва аеропорту</th>
+                    <th>Країна</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td>{$row['City_name']}</td>
+                    <td>{$row['Airport_name']}</td>
+                    <td>{$row['Country_name']}</td>
                     <td>"
                         ?>
-                        <form action='delete.php' method='post'>
+                        <form action='deleteCities.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn'/>
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                         <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='change.php' method='post'>
+                        <form action='changeCities.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
                     <?
                         echo "
@@ -139,7 +158,7 @@
             ?>
         </article>
         <article id="clients-block">
-            <h2>Table: Cities</h2>
+            <h2>Table: Clients</h2>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from clients");
@@ -147,29 +166,34 @@
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "<tr>
-                    <td>{$row['Name']}</td>
-                    <td>{$row['Owner']}</td>
-                    <td>{$row['Adress']}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th>ПІБ</th>
+                    <th>Дата народження</th>
+                    <th>Номер телефону</th>
+                    <th>E-mail</th>
+                    <th>Номер паспорту</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td>{$row['Full name']}</td>
+                    <td>{$row['Date of Birth']}</td>
+                    <td>{$row['Phone number']}</td>
+                    <td>{$row['E-mail']}</td>
+                    <td>{$row['Passport number']}</td>
                     <td>"
                     ?>
-                        <form action='delete.php' method='post'>
+                        <form action='deleteClients.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                             <input type='submit' name='del' value='Видалити' class='btn'/>
+                             <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                     <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='change.php' method='post'>
+                        <form action='changeClients.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn'/>
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
                     <?
                         echo "
@@ -180,9 +204,9 @@
             ?>
         </article>
         <article id="flights-block">
-            <h2>Table: Flight</h2>
+            <h2>Table: Flight</h2><!--для блока flights включати overflow: vivsible в контейнері-->
             <h3 class="h3-fix">Insert</h3>
-            <form name="add_c" action="php/insertCities.php" method="post" class="form-insert">
+            <form name="add_c" action="php/insertFlights.php" method="post" class="form-insert">
                 <div class="input-container">
                     <ul class="input-list extra-list">
                         <li>
@@ -218,7 +242,7 @@
             </form>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from airlines");
+                $result = $pdo->query("select * from flight");
                 echo '<table id="flights-table">';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
@@ -249,18 +273,18 @@
                     <td></td>
                     </tr>
                     <tr>
-                    <td>{$row['Name']}</td>
-                    <td>{$row['Owner']}</td>
-                    <td>{$row['Adress']}</td>
-                    <td>Дата відльоту</td>
-                    <td>Дата прильоту</td>
-                    <td>Авіакомпанія</td>
-                    <td>Літак</td>
-                    <td>Клас обслуговування</td>
-                    <td>Ціна</td>
+                    <td>{$row['Flight number']}</td>
+                    <td>{$row['City Of departure']}</td>
+                    <td>{$row['Arrival city']}</td>
+                    <td>{$row['Date of departure']}</td>
+                    <td>{$row['Date of arrival']}</td>
+                    <td>{$row['ID_Airline']}</td>
+                    <td>{$row['ID_Plane']}</td>
+                    <td>{$row['ID_Service class']}</td>
+                    <td>{$row['Full price']}</td>
                     <td>"
                         ?>
-                        <form action='delete.php' method='post'>
+                        <form action='deleteFlights.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                             <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
@@ -269,7 +293,7 @@
                     </td>
                     <td>"
                     ?>
-                        <form action='change.php' method='post'>
+                        <form action='changeFlights.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                             <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
@@ -282,7 +306,7 @@
             ?>
         </article>
         <article id="planes-block">
-            <h2>Table: Plane</h2>
+            <h2>Table: Plane</h2><!--для Plane те ж саме, що й для Flight-->
             <h3 class="h3-fix">Insert</h3>
             <form name="add_c" action="php/insertPlanes.php" method="post" class="form-insert">
                 <div class="input-container">
@@ -311,7 +335,7 @@
             </form>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from airlines");
+                $result = $pdo->query("select * from plane");
                 echo '<table id="planes-table">';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
@@ -322,17 +346,19 @@
                     <th>Бізнес-місця</th>
                     <th>Преміум-місця</th>
                     <th>Авіакомпанія</th>
+                    <th></th>
+                    <th></th>
                     </tr>
                     <tr>
-                    <td>{$row['Name']}</td>
-                    <td>{$row['Owner']}</td>
-                    <td>{$row['Adress']}</td>
-                    <td>Business</td>
-                    <td>Premium</td>
-                    <td>Air Company</td>
+                    <td>{$row['Brand & Model']}</td>
+                    <td>{$row['Edition']}</td>
+                    <td>{$row['Quantity Econom']}</td>
+                    <td>{$row['Quantity Business']}</td>
+                    <td>{$row['Quantity Premium']}</td>
+                    <td>{$row['ID_Airline']}</td>
                     <td>"
                         ?>
-                        <form action='delete.php' method='post'>
+                        <form action='deletePlanes.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                             <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
@@ -341,13 +367,103 @@
                     </td>
                     <td>"
                     ?>
-                        <form action='change.php' method='post'>
+                        <form action='changePlanes.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                             <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
                     <?
                         echo "
                     </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+        <article id="sales-block">
+            <h2>Table: Sales log</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertSales.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list">
+                        <li>
+                            <input type="text" name="Client" placeholder="Клієнт" class="input-control" required/>
+                        </li>
+                        
+                        <li>
+                            <input type="text" name="Flight" placeholder="Рейс" class="input-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from sales log");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <th>Клієнт</th>
+                    <th>Рейс</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td><input type="text" class=""></td>
+                    <td><input type="text" class=""></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>{$row['ID_Client']}</td>
+                    <td>{$row['ID_Flight']}</td>
+                    <td>"
+                        ?>
+                        <form action='deleteLog.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='changeLog.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>   
+        </article>
+        <article id="service-block">
+            <h2>Table: Service class</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertService.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list">
+                        <li>
+                            <input type="text" name="Class" placeholder="Клас" class="input-control extra-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from service class");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <th>Клас обслуговування</th>
+                    </tr>
+                    <tr>
+                    <td>{$row['Service class name']}</td>
                     </tr>";
                 }
                 echo "</table>";

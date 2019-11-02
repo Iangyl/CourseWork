@@ -1,4 +1,4 @@
-.container
+#container
 {
     position: relative;
     display: flex;
@@ -82,9 +82,9 @@ h2{
     margin: 40px 0;
     margin-left: 40px;
 }
-#welcome-block{
+/*#welcome-block{
     display: none;
-}
+}*/
 /* table style - default style */
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -170,28 +170,29 @@ tr td:last-child {
 }
 /*block airlines */
 #airlines-block{
-    display: block;
-}
-#airlines-block{
     display: none;
+}
+#airlines-block table{
+    margin-left: 40px;
 }
 /*block cities*/
 #cities-block{
-    display: block;
-}
-#cities-block{
     display: none;
+}
+#cities-block table{
+    margin-left: 40px;
 }
 /*block clients*/
 #clients-block{
-    display: block;
-}
-#clients-block{
     display: none;
+}
+#clients-block table{
+    margin-left: 40px;
 }
 /*block flights*/
 #flights-block{
-    display: block;
+    display: none;  
+    overflow: visible;
 }
 .extra-list
 {
@@ -200,35 +201,35 @@ tr td:last-child {
 .extra-control{
     width: 500px;
 }
-#flights-table{
-    font-size: 9pt;
-}
-#flights-table th{
-    padding: 10px 0;
-    text-align: center; 
-}
 #flights-table td{
     padding: 10px 0;
     text-align: center;
     border: 1px solid white;
 }
-.table-input{
-    width: 114px;
-}
-#flights-block{
-    display: none;
-}
 /* planes block*/
 #planes-block{
-    display: block;
-}/*
-#planes-table{
-    font-size: 11pt;
+    display: none;
+    overflow: visible;
 }
-#planes-table th{
-    padding: 5px 10px;
+#planes-block table{
+    margin-left: 20px;
 }
-#planes-table td{
-    padding: 5px 10px;
+/*sales-block*/
+#sales-block{
+    display: none;
+}
+#sales-block table{
+    margin-left: 40px;
+}
+#sales-block table td{
+    padding: 10px 20px;
     text-align: center;
+    border: 1px solid white;
+}
+/*service-block*/
+#service-block{
+    display: none
+}
+#service-block table{
+    margin-left: 40px;
 }
