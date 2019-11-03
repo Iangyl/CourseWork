@@ -170,28 +170,28 @@ tr td:last-child {
 }
 /*block airlines */
 #airlines-block{
-    display: none;
+    display: block;
 }
 #airlines-block table{
     margin-left: 40px;
 }
 /*block cities*/
 #cities-block{
-    display: none;
+    display: block;
 }
 #cities-block table{
     margin-left: 40px;
 }
 /*block clients*/
 #clients-block{
-    display: none;
+    display: block;
 }
 #clients-block table{
     margin-left: 40px;
 }
 /*block flights*/
 #flights-block{
-    display: none;  
+    display: block;  
     overflow: visible;
 }
 .extra-list
@@ -208,7 +208,7 @@ tr td:last-child {
 }
 /* planes block*/
 #planes-block{
-    display: none;
+    display: block;
     overflow: visible;
 }
 #planes-block table{
@@ -216,7 +216,7 @@ tr td:last-child {
 }
 /*sales-block*/
 #sales-block{
-    display: none;
+    display: block;
 }
 #sales-block table{
     margin-left: 40px;
@@ -228,7 +228,7 @@ tr td:last-child {
 }
 /*service-block*/
 #service-block{
-    display: none
+    display: block;
 }
 #service-block table{
     margin-left: 40px;

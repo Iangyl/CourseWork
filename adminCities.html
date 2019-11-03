@@ -1,0 +1,89 @@
+<?php require_once 'php/db.php'?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/adminHomestyle.css" type="text/css" media="all">
+    <title>AdminCities</title>
+</head>
+<body>
+    <div id="container">
+        <aside>
+            <nav>
+                <ul class="list-nav">
+                   <li><a href="adminAirlines.html">Airlines</a></li>
+                   <li><a href="adminCities.html">Cities</a></li>
+                   <li><a href="adminClients.html">Clients</a></li>
+                   <li><a href="adminFlights.html">Flight</a></li>
+                   <li><a href="adminPlanes.html">Plane</a></li>
+                   <li><a href="adminSalesLog.html">Sales log</a></li>
+                   <li><a href="adminServiceClass.html">Service class</a></li>
+                   <li><a href="index.html">Exit</a></li> 
+                </ul>
+            </nav>    
+        </aside>
+        <article id="cities-block" class="block">
+            <h2>Table: Cities</h2>
+            <h3 class="h3-fix">Insert</h3>
+            <form name="add_c" action="php/insertCities.php" method="post" class="form-insert">
+                <div class="input-container">
+                    <ul class="input-list">
+                        <li>
+                            <input type="text" name="Name" placeholder="Назва міста" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Country" placeholder="Назва країни" class="input-control" required/>
+                        </li>
+                        <li>
+                            <input type="text" name="Airport" placeholder="Назва аеропорту" class="input-control" required/>
+                        </li>
+                    </ul>                    
+                    <button type="submit" name="add" class="btn">Вставити</button>
+                </div>
+            </form>
+            <h3 class="h3-fix">Change/Delete</h3>
+            <?php
+                $result = $pdo->query("select * from cites");
+                echo '<table>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "<tr>
+                    <th>Назва міста</th>
+                    <th>Назва аеропорту</th>
+                    <th>Країна</th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                    <tr>
+                    <td>{$row['City_name']}</td>
+                    <td>{$row['Airport_name']}</td>
+                    <td>{$row['Country_name']}</td>
+                    <td>"
+                        ?>
+                        <form action='deleteCities.php' method='post'>
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='changeCities.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>
+                    <?
+                        echo "
+                    </td>
+                    </tr>";
+                }
+                echo "</table>";
+            ?>
+        </article>
+    </div>
+</body>
+</html>
