@@ -89,16 +89,17 @@ body
    under - section
 */
 section{
-    background-color: rgb(235, 235, 236);
+    background-color: rgba(235, 235, 236, 0.548);
 }
+
 #first-block{
     position: relative;
     display: flex;
     flex-direction: column;
 }
-#first-block div:nth-child(1){
+.h-block{
     position: relative;
-    padding-top: 80px;
+    padding-top: 60px;
     justify-content: center;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -111,14 +112,16 @@ section{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16pt;
     font-weight: normal;
-    letter-spacing: 5pt;
+    letter-spacing: 2pt;
     margin-top: 20px;
 }
 #block-of-benefits{
     position: relative;
+    margin-top: 40px;
 }
 #list-of-benefits{
     display: flex;
+    padding-bottom: 80px;
 }
 .class-of-benefits
 {
@@ -126,13 +129,156 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 #list-of-benefits li{
-    margin-left: 270px;
+    margin-left: 155px;
+    width: 300px;
 }
 .img-benefits{
     height: 150px;
     width: 150px;
     border-radius: 50%;
-    padding: 0px;
+    box-shadow: 0 0 15px rgb(55, 59, 80);
+    animation: flicker 18s ease infinite;
+}
+.circle-head{
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+}
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 11pt;
+    margin-top: 15px;
+    text-align: center;
+}
+@keyframes flicker{
+    0%{
+        box-shadow: 0 0 15px rgb(55, 59, 80);
+        opacity: 1;
+    }
+    10%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.9);
+        opacity: 0.9;
+    }
+    20%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.8);
+        opacity: 0.8;
+    }
+    30%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.7);
+        opacity: 0.9;
+    }
+    40%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.6);
+        opacity: 0.8;
+    }
+    50%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.5);
+        opacity: 0.9;
+    }
+    60%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.6);
+        opacity: 0.8;
+    }
+    70%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.7);
+        opacity: 0.9;
+    }
+    80%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.8);
+        opacity: 0.8;
+    }
+    90%{
+        box-shadow: 0 0 15px rgba(55, 59, 80, 0.9);
+        opacity: 0.9;
+    }
+    100%{
+        box-shadow: 0 0 15px rgba(55, 59, 80);
+        opacity: 1;
+    }
+}
+
+/*How it works?*/
+#second-block{
+    position: relative;
+    background-color: white;
+}
+.howItWorks-img{
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+}
+#list-howItWork{
+    display: flex;
+    padding-bottom: 80px;
+}
+#list-howItWork li{
+    margin-left: 155px;
+}
+#second-block li div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+}
+/* your assistant*/
+#third-block{
+    position: relative;
+}
+#thirdBlock-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 780px;
+    margin-left: 400px;
+    padding-bottom: 80px;
+}
+#head-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+.head-4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.plain-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12pt;
+}
+/*footer*/
+#fourth-block{
+    position: relative;
+    background-color: white;
+}
+#list-paySystem{
+    display: flex;
+    align-items: center;
+}
+#list-paySystem li{
+    margin-left: 120px;
+}
+.img-paySystem{
+    height: 100px;
+    width: 100px;
+}
+footer{
+    position: relative;
+    background-color: rgb(0, 0, 53);
+}
+#footerBlock-list{
+    display: flex;
 }
