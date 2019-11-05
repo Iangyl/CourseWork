@@ -194,6 +194,10 @@ tr td:last-child {
     display: block;  
     overflow: visible;
 }
+.table-input{
+    padding: 5px;
+    border: 1px solid black;
+}
 .extra-list
 {
     flex-direction: column;

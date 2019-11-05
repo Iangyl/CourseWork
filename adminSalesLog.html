@@ -44,7 +44,7 @@
             </form>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from sales log");
+                $result = $pdo->query("select * from sales_log");
                 echo '<table>';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {

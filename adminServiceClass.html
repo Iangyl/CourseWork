@@ -40,7 +40,7 @@
             </form>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from service class");
+                $result = $pdo->query("select * from service_class");
                 echo '<table>';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
@@ -48,7 +48,7 @@
                     <th>Клас обслуговування</th>
                     </tr>
                     <tr>
-                    <td>{$row['Service class name']}</td>
+                    <td>{$row['service_class_name']}</td>
                     </tr>";
                 }
                 echo "</table>";
