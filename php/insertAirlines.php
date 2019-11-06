@@ -10,7 +10,7 @@
             $sql = "insert into airlines(Name, Owner, Adress) values('".$_POST['Name']."', '".$_POST['Owner']."', '".$_POST['Adress']."')";
             $stm = $pdo -> prepare($sql);
             $stm -> execute($values);
-            echo "<script>location='../adminHome.html';</script>";
+            echo "<script>location='../adminAirlines.html';</script>";
         }
     /*}*/
 ?>
