@@ -30,10 +30,9 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
             $result = $pdo->query("select * from clients");
-            echo '<table>';
-            while($row = $result->fetch(PDO::FETCH_LAZY))
-            {
-                echo "<tr>
+            echo '<table>
+            <tr>
+                <th>Id</th>
                 <th>ПІБ</th>
                 <th>Дата народження</th>
                 <th>Номер телефону</th>
@@ -41,13 +40,17 @@
                 <th>Номер паспорту</th>
                 <th></th>
                 <th></th>
-                </tr>
+            </tr>';
+            while($row = $result->fetch(PDO::FETCH_LAZY))
+            {
+                echo "
                 <tr>
-                <td>{$row['Full_name']}</td>
-                <td>{$row['birth_date']}</td>
-                <td>{$row['Phone_number']}</td>
-                <td>{$row['Email']}</td>
-                <td>{$row['Passport_number']}</td>
+                <td>{$row['ID']}</td>
+                <td><input type='text' name='full_n' value='{$row['Full_name']}'></td>
+                <td><input type='text' name='birth_d' value='{$row['birth_date']}'></td>
+                <td><input type='text' name='phone_n' value='{$row['Phone_number']}'></td>
+                <td><input type='text' name='email' value='{$row['Email']}'></td>
+                <td><input type='text' name='pass_n' value='{$row['Passport_number']}'></td>
                 <td>"
                 ?>
                     <form action='php/deleteClients.php' method='post'>

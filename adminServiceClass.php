@@ -41,13 +41,16 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from service_class");
-                echo '<table>';
+                echo '<table>
+                <tr>
+                    <th>Id</th>
+                    <th>Клас обслуговування</th>
+                </tr>';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
-                    echo "<tr>
-                    <th>Клас обслуговування</th>
-                    </tr>
+                    echo "
                     <tr>
+                    <td>{$row['ID']}</td>
                     <td>{$row['service_class_name']}</td>
                     </tr>";
                 }

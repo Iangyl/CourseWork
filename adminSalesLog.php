@@ -45,38 +45,38 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from sales_log");
-                echo '<table>';
-                while($row = $result->fetch(PDO::FETCH_LAZY))
-                {
-                    echo "<tr>
+                echo '<table>
+                <tr>
                     <th>Клієнт</th>
                     <th>Рейс</th>
                     <th></th>
                     <th></th>
                     </tr>
                     <tr>
-                    <td><input type='text'></td>
-                    <td><input type='text'></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
                     <td></td>
                     <td></td>
-                    </tr>
-                    <tr>
-                    <td>{$row['ID_Client']}</td>
-                    <td>{$row['ID_Flight']}</td>
+                </tr>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "
+                    <tr><form action='php/changeLog.php' method='post'>
+                    <td><input type='text' name='id_c' value='{$row['ID_Client']}'></td>
+                    <td><input type='text' name='id_p' value='{$row['ID_Flight']}'></td>
                     <td>"
-                        ?>
-                        <form action='php/deleteLog.php' method='post'>
-                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
-                        </form>
+                        ?>                        
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>                        
                         <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='php/changeLog.php' method='post'>
+                        <form action='php/deleteLog.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                     <?
                         echo "

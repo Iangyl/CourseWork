@@ -65,10 +65,9 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from flight");
-                echo '<table id="flights-table">';
-                while($row = $result->fetch(PDO::FETCH_LAZY))
-                {
-                    echo "<tr>
+                echo "<table id='flights-table'>
+                <tr>
+                    <th>Id</th>
                     <th>Номер польоту</th>
                     <th>Місто відльоту</th>
                     <th>Місто прильоту</th>
@@ -82,6 +81,7 @@
                     <th></th>
                     </tr>
                     <tr>
+                    <td>№</td>
                     <td><input type='text' class='table-input'></td>
                     <td><input type='text' class='table-input'></td>
                     <td><input type='text' class='table-input'></td>
@@ -93,31 +93,34 @@
                     <td><input type='text' class='table-input'></td>
                     <td></td>
                     <td></td>
-                    </tr>
-                    <tr>
-                    <td>{$row['Flight_number']}</td>
-                    <td>{$row['Departure_city']}</td>
-                    <td>{$row['Arrival_city']}</td>
-                    <td>{$row['Departure_date']}</td>
-                    <td>{$row['Arrival_date']}</td>
-                    <td>{$row['ID_Airline']}</td>
-                    <td>{$row['ID_Plane']}</td>
-                    <td>{$row['ID_Service']}</td>
-                    <td>{$row['Full_price']}</td>
+                </tr>";
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "
+                    <tr><form action='php/changeFlights.php' method='post'>
+                    <td>{$row['ID']}</td>
+                    <td><input type='text' name='f_number' value='{$row['Flight_number']}'></td>
+                    <td><input type='text' name='d_city' value='{$row['Departure_city']}'></td>
+                    <td><input type='text' name='a_city' value='{$row['Arrival_city']}'></td>
+                    <td><input type='text' name='d_date' value='{$row['Departure_date']}'></td>
+                    <td><input type='text' name='a_date' value='{$row['Arrival_date']}'></td>
+                    <td><input type='text' name='id_a' value='{$row['ID_Airline']}'></td>
+                    <td><input type='text' name='id_p' value='{$row['ID_Plane']}'></td>
+                    <td><input type='text' name='id_s' value='{$row['ID_Service']}'></td>
+                    <td><input type='text' name='f_price' value='{$row['Full_price']}'></td>
                     <td>"
                         ?>
-                        <form action='php/deleteFlights.php' method='post'>
-                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
-                        </form>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>                        
                         <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='php/changeFlights.php' method='post'>
+                        <form action='php/deleteFlights.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                     <?
                         echo "

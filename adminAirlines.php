@@ -49,6 +49,7 @@
                 $result = $pdo->query("select * from airlines");
                 echo "<table>
                 <tr>
+                    <th>Id</th>
                     <th>Назва компанії</th>
                     <th>Власник</th>
                     <th>Адреса</th>
@@ -60,6 +61,7 @@
                     echo "
                     <tr>
                     <form action='php/changeAirlines.php' method='post'>
+                        <td>{$row['ID']}</td>
                         <td><input type='text' name='name' value='{$row['Name']}'></td>
                         <td><input type='text' name='owner' value='{$row['Owner']}'></td>
                         <td><input type='text' name='adress' value='{$row['Adress']}'></td>

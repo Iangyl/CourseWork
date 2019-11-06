@@ -35,7 +35,7 @@
                             <input type="text" name="Model" placeholder="Назва та модель" class="input-control extra-control" required/>
                         </li>
                         <li>
-                            <input type="date" name="Edition" placeholder="Випуск" class="input-control extra-control" required/>
+                            <input type="text" name="Edition" placeholder="Рік випуску" class="input-control extra-control" required/>
                         </li>
                         <li>
                             <input type="text" name="E-quantity" placeholder="К-сть економ-класу" class="input-control extra-control" required/>
@@ -47,7 +47,7 @@
                             <input type="text" name="P-quantity" placeholder="К-сть преміум-класу" class="input-control extra-control" required/>
                         </li>                
                         <li>
-                            <input type="text" name="AirLine" placeholder="Авіакомпанія" class="input-control extra-control" required/>
+                            <input type="number" name="Airline" placeholder="Авіакомпанія(Id)" class="input-control extra-control" required/>
                         </li>
                     </ul>                    
                     <button type="submit" name="add" class="btn">Вставити</button>
@@ -56,10 +56,9 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from plane");
-                echo '<table id="planes-table">';
-                while($row = $result->fetch(PDO::FETCH_LAZY))
-                {
-                    echo "<tr>
+                echo '<table id="planes-table">
+                <tr>
+                    <th>Id</th>
                     <th>Модель</th>
                     <th>Випуск</th>
                     <th>Економ-місця</th>
@@ -68,29 +67,33 @@
                     <th>Авіакомпанія</th>
                     <th></th>
                     <th></th>
-                    </tr>
-                    <tr>
-                    <td>{$row['Model']}</td>
-                    <td>{$row['Edition']}</td>
-                    <td>{$row['Quantity_Econom']}</td>
-                    <td>{$row['Quantity_Business']}</td>
-                    <td>{$row['Quantity_Premium']}</td>
-                    <td>{$row['ID_Airline']}</td>
+                </tr>';
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "
+                    <tr><form action='php/changePlanes.php' method='post'>
+                    <td>{$row['ID']}</td>
+                    <td><input type='text' name='model' value='{$row['Model']}'></td>
+                    <td><input type='text' name='edition' value='{$row['Edition']}'></td>
+                    <td><input type='text' name='q_econom' value='{$row['Quantity_Econom']}'></td>
+                    <td><input type='text' name='q_business' value='{$row['Quantity_Business']}'></td>
+                    <td><input type='text' name='q_premium' value='{$row['Quantity_Premium']}'></td>
+                    <td><input type='text' name='id_a' value='{$row['ID_Airline']}'></td>
                     <td>"
                         ?>
-                        <form action='php/deletePlanes.php' method='post'>
-                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>
+                        
                         <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='php/changePlanes.php' method='post'>
+                       <form action='php/deletePlanes.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
-                        </form>
+                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                        </form> 
                     <?
                         echo "
                     </td>

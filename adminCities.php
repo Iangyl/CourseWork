@@ -49,6 +49,7 @@
                 $result = $pdo->query("select * from cities");
                 echo '<table>
                 <tr>
+                    <th>Id</th>
                     <th>Назва міста</th>
                     <th>Назва аеропорту</th>
                     <th>Країна</th>
@@ -59,6 +60,7 @@
                 {
                     echo "
                     <tr><form action='php/changeCities.php' method='post'>
+                    <td>{$row['ID']}</td>
                     <td><input type='text' name='c_name' value='{$row['City_name']}'></td>
                     <td><input type='text' name='a_name' value='{$row['Airport_name']}'></td>
                     <td><input type='text' name='country_name' value='{$row['Country_name']}'></td>
