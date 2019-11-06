@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/adminHomestyle.css" type="text/css" media="all">
+    <script src='js/juery.js'></script>
     <title>AdminFlight</title>
 </head>
 <body>
@@ -65,7 +66,7 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from flight");
-                echo "<table id='flights-table'>
+                echo "<table id='flights-table' id='filter-table'>
                 <tr>
                     <th>Id</th>
                     <th>Номер польоту</th>
@@ -80,7 +81,7 @@
                     <th></th>
                     <th></th>
                     </tr>
-                    <tr>
+                    <tr class='table-filters bg-danger'>
                     <td>№</td>
                     <td><input type='text' class='table-input'></td>
                     <td><input type='text' class='table-input'></td>
@@ -97,7 +98,7 @@
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "
-                    <tr><form action='php/changeFlights.php' method='post'>
+                    <tr class='table-data'><form action='php/changeFlights.php' method='post'>
                     <td>{$row['ID']}</td>
                     <td><input type='text' name='f_number' value='{$row['Flight_number']}'></td>
                     <td><input type='text' name='d_city' value='{$row['Departure_city']}'></td>
@@ -131,5 +132,32 @@
             ?>
         </article>
     </div>
+    <script>
+        $('.table-filters input').on('input', function () {
+            filterTable($(this).parents('table'));
+        });
+
+        function filterTable($table) {
+            console.log("jkjhk");
+            var $filters = $table.find('.table-filters td');
+            var $rows = $table.find('.table-data');
+            $rows.each(function (rowIndex) {
+                var valid = true;
+                $(this).find('td').each(function (colIndex) {
+                    if ($filters.eq(colIndex).find('input').val()) {
+                        if ($(this).html().toLowerCase().indexOf(
+                                $filters.eq(colIndex).find('input').val().toLowerCase()) == -1) {
+                            valid = valid && false;
+                        }
+                    }
+                });
+                if (valid === true) {
+                    $(this).css('display', '');
+                } else {
+                    $(this).css('display', 'none');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
