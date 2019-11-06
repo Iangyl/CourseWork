@@ -2,12 +2,9 @@
     include "db.php";
         if(isset($_POST['add']))
         {
-            $name = $_POST['Name'];
-            $owner = $_POST['Country'];
-            $adress = $_POST['Airport'];
-            $sql = "insert into cities(Name, Country, Airport) values('".$_POST['Name']."', '".$_POST['Country']."', '".$_POST['Airport']."')";
+            $sql = "INSERT into cities(City_name, Airport_name, Country_name) values('".$_POST['name']."', '".$_POST['country']."', '".$_POST['airport']."')";
             $stm = $pdo -> prepare($sql);
             $stm -> execute($values);
-            echo "<script>location='../adminCities.html';</script>";
+            echo "<script>location='../adminCities.php';</script>";
         }
 ?>

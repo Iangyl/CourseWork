@@ -6,6 +6,6 @@
             $sql = "insert into service_class(service_class_name) values('".$_POST['Class']."')";
             $stm = $pdo -> prepare($sql);
             $stm -> execute($values);
-            echo "<script>location='../adminServiceClass.html';</script>";
+            echo "<script>location='../adminServiceClass.php';</script>";
         }
 ?>

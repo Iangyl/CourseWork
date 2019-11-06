@@ -11,7 +11,7 @@
         {
         ?>
             <script>
-            location='../adminHome.html';
+            location='../adminHome.php';
             </script>
         <?
         }

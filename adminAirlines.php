@@ -14,18 +14,18 @@
         <aside>
             <nav>
                 <ul class="list-nav">
-                   <li><a href="adminAirlines.html">Airlines</a></li>
-                   <li><a href="adminCities.html">Cities</a></li>
-                   <li><a href="adminClients.html">Clients</a></li>
-                   <li><a href="adminFlights.html">Flight</a></li>
-                   <li><a href="adminPlanes.html">Plane</a></li>
-                   <li><a href="adminSalesLog.html">Sales log</a></li>
-                   <li><a href="adminServiceClass.html">Service class</a></li>
+                   <li><a href="adminAirlines.php">Airlines</a></li>
+                   <li><a href="adminCities.php">Cities</a></li>
+                   <li><a href="adminClients.php">Clients</a></li>
+                   <li><a href="adminFlights.php">Flight</a></li>
+                   <li><a href="adminPlanes.php">Plane</a></li>
+                   <li><a href="adminSalesLog.php">Sales log</a></li>
+                   <li><a href="adminServiceClass.php">Service class</a></li>
                    <li><a href="index.html">Exit</a></li> 
                 </ul>
             </nav>    
         </aside>
-        <article id="airlines-block" style="display: block;">
+        <article id="airlines-block">
             <h2>Table: Airlines</h2>
             <h3 class="h3-fix">Insert</h3>
             <form name="add_a" action="php/insertAirlines.php" method="post" class="form-insert">
@@ -47,35 +47,36 @@
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
                 $result = $pdo->query("select * from airlines");
-                echo '<table>';
-                while($row = $result->fetch(PDO::FETCH_LAZY))
-                {
-                    echo "<tr>
+                echo "<table>
+                <tr>
                     <th>Назва компанії</th>
                     <th>Власник</th>
                     <th>Адреса</th>
                     <th></th>
                     <th></th>
-                    </tr>
+                </tr>";
+                while($row = $result->fetch(PDO::FETCH_LAZY))
+                {
+                    echo "
                     <tr>
-                    <td>{$row['Name']}</td>
-                    <td>{$row['Owner']}</td>
-                    <td>{$row['Adress']}</td>
+                    <form action='php/changeAirlines.php' method='post'>
+                        <td><input type='text' name='name' value='{$row['Name']}'></td>
+                        <td><input type='text' name='owner' value='{$row['Owner']}'></td>
+                        <td><input type='text' name='adress' value='{$row['Adress']}'></td>
                     <td>"
-                        ?>
-                        <form action='deleteAirlines.php' method='post'>
-                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='del' value='Видалити' class='btn-search'/>
-                        </form>
-                        <?
+                    ?>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                        </form>                        
+                    <?
                         echo "
                     </td>
                     <td>"
                     ?>
-                        <form action='changeAirlines.php' method='post'>
+                        <form action='php/deleteAirlines.php' method='post'>
                             <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                            <input type='submit' name='chg' value='Змінити' class='btn-search'/>
-                        </form>
+                            <input type='submit' name="del" value='Видалити' class='btn-search'/>
+                        </form>   
                     <?
                         echo "
                     </td>

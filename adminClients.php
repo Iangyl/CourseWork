@@ -14,13 +14,13 @@
         <aside>
             <nav>
                 <ul class="list-nav">
-                    <li><a href="adminAirlines.html">Airlines</a></li>
-                    <li><a href="adminCities.html">Cities</a></li>
-                    <li><a href="adminClients.html">Clients</a></li>
-                    <li><a href="adminFlights.html">Flight</a></li>
-                    <li><a href="adminPlanes.html">Plane</a></li>
-                    <li><a href="adminSalesLog.html">Sales log</a></li>
-                    <li><a href="adminServiceClass.html">Service class</a></li>
+                    <li><a href="adminAirlines.php">Airlines</a></li>
+                    <li><a href="adminCities.php">Cities</a></li>
+                    <li><a href="adminClients.php">Clients</a></li>
+                    <li><a href="adminFlights.php">Flight</a></li>
+                    <li><a href="adminPlanes.php">Plane</a></li>
+                    <li><a href="adminSalesLog.php">Sales log</a></li>
+                    <li><a href="adminServiceClass.php">Service class</a></li>
                     <li><a href="index.html">Exit</a></li> 
                 </ul>
             </nav>    
@@ -50,7 +50,7 @@
                 <td>{$row['Passport_number']}</td>
                 <td>"
                 ?>
-                    <form action='deleteClients.php' method='post'>
+                    <form action='php/deleteClients.php' method='post'>
                     <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                          <input type='submit' name='del' value='Видалити' class='btn-search'/>
                     </form>
@@ -59,7 +59,7 @@
                 </td>
                 <td>"
                 ?>
-                    <form action='changeClients.php' method='post'>
+                    <form action='php/changeClients.php' method='post'>
                         <input type="hidden" name="id" value="<? echo $row['ID'];?>">
                         <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                     </form>

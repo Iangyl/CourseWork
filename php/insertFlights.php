@@ -11,6 +11,6 @@
              '".$_POST['FullPrice']."')";
             $stm = $pdo -> prepare($sql);
             $stm -> execute($values);
-            echo "<script>location='../adminFlights.html';</script>";
+            echo "<script>location='../adminFlights.php';</script>";
         }
 ?>

@@ -10,6 +10,6 @@
               '".$_POST['Airline']."')";
             $stm = $pdo -> prepare($sql);
             $stm -> execute($values);
-            echo "<script>location='../adminPlanes.html';</script>";
+            echo "<script>location='../adminPlanes.php';</script>";
         }
 ?>
