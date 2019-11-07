@@ -29,10 +29,10 @@
             <div class="header-container-nav">
                 <nav>
                     <ul id="nav-ul">
-                        <li><a href="index.html" class="header-nav-text">ABOUT</a></li>
-                        <li><a href="offer.html" class="header-nav-text">OFFER</a></li>
-                        <li><a href="information.html" class="header-nav-text">INFORMATION</a></li>
-                        <li><a href="contact.html" class="header-nav-text">CONTACT US</a></li>
+                        <li><a href="index.php" class="header-nav-text">ABOUT</a></li>
+                        <li><a href="offer.php" class="header-nav-text">TICKETS</a></li>
+                        <li><a href="information.php" class="header-nav-text">INFORMATION</a></li>
+                        <li><a href="contact.php" class="header-nav-text">CONTACT US</a></li>
                     </ul>
                 </nav>
             </div>
@@ -108,13 +108,13 @@
             </li>
             <li>
               <div>
-                <a style="text-decoration: none; outline: none;" href="offer.html">
+                <a style="text-decoration: none; outline: none;" href="offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="./pictures/globe.png" alt="global.png">
-                    <span>Бронювання</br> авіаквитків</span>
+                    <span>Пошук</br> авіаквитків</span>
                   </div>
                 </a>
-                <a style="text-decoration: none; outline: none;" href="contact.html">
+                <a style="text-decoration: none; outline: none;" href="contact.php">
                   <div id="footer-contact">
                     <img class="footer-img" src="./pictures/support.png" alt="support.png">
                     <span>Зв'яжіться з нами</span>

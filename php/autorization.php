@@ -18,7 +18,7 @@
         else
         {
             echo "Неправильні вхідні дані, спробуйте ще раз!</br>";
-            echo "<a href='index.html'>На головну</a>";
+            echo "<a href='../index.php'>На головну</a>";
         }
     }
 

@@ -29,17 +29,17 @@
           <div class="header-container-nav">
             <nav>
               <ul id="nav-ul">
-                <li><a href="index.html" class="header-nav-text">ABOUT</a></li>
-                <li><a href="offer.html" class="header-nav-text">OFFER</a></li>
-                <li><a href="information.html" class="header-nav-text">INFORMATION</a></li>
-                <li><a href="contact.html" class="header-nav-text">CONTACT US</a></li>
+                <li><a href="index.php" class="header-nav-text">ABOUT</a></li>
+                <li><a href="offer.php" class="header-nav-text">TICKETS</a></li>
+                <li><a href="information.php" class="header-nav-text">INFORMATION</a></li>
+                <li><a href="contact.php" class="header-nav-text">CONTACT US</a></li>
               </ul>
             </nav>
           </div>
         </header>
         <section>
           <div id="first-block">
-            <div class="h-block">Покупка дешевих квитків</br>AirLine</div>
+            <div class="h-block">Пошук дешевих квитків</br>AirLine</div>
             <div>Переваги сервісу самостійного планування подорожей</div>
             <div id="block-of-benefits">
               <ul id="list-of-benefits">
@@ -47,8 +47,8 @@
                   <img class="img-benefits" src="./pictures/PROFITABLE.png" alt="good.png"/>
                   <span class="circle-head">Це вигідно</span>
                   <span class="text">Не потрібно переплачувати!</br> У нас немає націнки і комісії.</br> 
-                    Квиток на літак, придбаний за допомогою нашого сайту,</br>
-                     ви купуєте за найкращою ціною!</span>
+                    Квиток на літак, підібраний за допомогою нашого сайту,</br>
+                     ви купуєте за найкращою ціною.</span>
                 </div></li>
                 <li><div class="class-of-benefits">
                   <img class="img-benefits" src="./pictures/CONVENIENT.png" alt="convenient.png"/>
@@ -90,7 +90,7 @@
               </ul>
           </div>
           <div id="third-block">
-            <div class="h-block">Ваш помічник №1 в придбанні білетів!</div>
+            <div class="h-block">Ваш помічник №1 в підборі квитків!</div>
             <div id="thirdBlock-text">
               <span id="head-3">Авіаквитки на AirLine</span>
               <p class="plain-text">Один з основних моментів у підготовці до подорожі - бронювання квитків на літак.
@@ -183,13 +183,13 @@
             </li>
             <li>
               <div>
-                <a style="text-decoration: none; outline: none;" href="offer.html">
+                <a style="text-decoration: none; outline: none;" href="offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="./pictures/globe.png" alt="global.png">
-                    <span>Бронювання</br> авіаквитків</span>
+                    <span>Пошук</br> авіаквитків</span>
                   </div>
                 </a>
-                <a style="text-decoration: none; outline: none;" href="contact.html">
+                <a style="text-decoration: none; outline: none;" href="contact.php">
                   <div id="footer-contact">
                     <img class="footer-img" src="./pictures/support.png" alt="support.png">
                     <span>Зв'яжіться з нами</span>

@@ -17,12 +17,12 @@
                 <ul class="list-nav">
                    <li><a href="adminAirlines.php">Airlines</a></li>
                    <li><a href="adminCities.php">Cities</a></li>
+                   <li><a href="adminCitiesSecond.php">Cities-2</a></li>
                    <li><a href="adminClients.php">Clients</a></li>
                    <li><a href="adminFlights.php">Flight</a></li>
                    <li><a href="adminPlanes.php">Plane</a></li>
-                   <li><a href="adminSalesLog.php">Sales log</a></li>
                    <li><a href="adminServiceClass.php">Service class</a></li>
-                   <li><a href="index.html">Exit</a></li> 
+                   <li><a href="index.php">Exit</a></li> 
                 </ul>
             </nav>    
         </aside>
@@ -77,7 +77,7 @@
                     <th>Авіакомпанія</th>
                     <th>Літак</th>
                     <th>Клас обслуговування</th>
-                    <th>Ціна</th>
+                    <th>Ціна, грн</th>
                     <th></th>
                     <th></th>
                     </tr>
@@ -99,7 +99,7 @@
                 {
                     echo "
                     <tr class='table-data'><form action='php/changeFlights.php' method='post'>
-                    <td>{$row['ID']}</td>
+                    <td>{$row['Id']}</td>
                     <td><input type='text' name='f_number' value='{$row['Flight_number']}'></td>
                     <td><input type='text' name='d_city' value='{$row['Departure_city']}'></td>
                     <td><input type='text' name='a_city' value='{$row['Arrival_city']}'></td>
@@ -111,7 +111,7 @@
                     <td><input type='text' name='f_price' value='{$row['Full_price']}'></td>
                     <td>"
                         ?>
-                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type="hidden" name="id" value="<? echo $row['Id'];?>">
                             <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                         </form>                        
                         <?

@@ -18,10 +18,10 @@
                 <ul class="list-nav">
                    <li><a href="adminAirlines.php">Airlines</a></li>
                    <li><a href="adminCities.php">Cities</a></li>
+                   <li><a href="adminCitiesSecond.php">Cities-2</a></li>
                    <li><a href="adminClients.php">Clients</a></li>
                    <li><a href="adminFlights.php">Flight</a></li>
                    <li><a href="adminPlanes.php">Plane</a></li>
-                   <li><a href="adminSalesLog.php">Sales log</a></li>
                    <li><a href="adminServiceClass.php">Service class</a></li>
                    <li><a href="index.php">Exit</a></li> 
                 </ul>
