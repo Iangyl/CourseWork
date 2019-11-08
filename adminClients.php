@@ -34,37 +34,37 @@
             <tr>
                 <th>Id</th>
                 <th>ПІБ</th>
-                <th>Дата народження</th>
                 <th>Номер телефону</th>
                 <th>E-mail</th>
-                <th>Номер паспорту</th>
+                <th>Номер карти</th>
+                <th>CIV</th>
                 <th></th>
                 <th></th>
             </tr>';
             while($row = $result->fetch(PDO::FETCH_LAZY))
             {
                 echo "
-                <tr>
+                <tr><form action='php/changeClients.php' method='post'>
                 <td>{$row['ID']}</td>
-                <td><input type='text' name='full_n' value='{$row['Full_name']}'></td>
-                <td><input type='text' name='birth_d' value='{$row['birth_date']}'></td>
+                <td><input type='text' name='full_n' value='{$row['Full_Name']}'></td>
                 <td><input type='text' name='phone_n' value='{$row['Phone_number']}'></td>
-                <td><input type='text' name='email' value='{$row['Email']}'></td>
-                <td><input type='text' name='pass_n' value='{$row['Passport_number']}'></td>
+                <td><input type='email' name='email' value='{$row['Email']}'></td>
+                <td><input type='text' name='card_n' value='{$row['cardNum']}'></td>
+                <td><input type='text' name='civC' value='{$row['civ']}'></td>
                 <td>"
                 ?>
-                    <form action='php/deleteClients.php' method='post'>
-                    <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                         <input type='submit' name='del' value='Видалити' class='btn-search'/>
+                    
+                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                        <input type='submit' name='chg' value='Змінити' class='btn-search'/>
                     </form>
                 <?
                     echo "
                 </td>
                 <td>"
                 ?>
-                    <form action='php/changeClients.php' method='post'>
-                        <input type="hidden" name="id" value="<? echo $row['ID'];?>">
-                        <input type='submit' name='chg' value='Змінити' class='btn-search'/>
+                    <form action='php/deleteClients.php' method='post'>
+                    <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                         <input type='submit' name='del' value='Видалити' class='btn-search'/>
                     </form>
                 <?
                     echo "

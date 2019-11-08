@@ -1,0 +1,40 @@
+body{
+    background-color: rgba(0, 0, 255, 0.438);
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+#letter-block{
+    background-color: rgba(216, 216, 216, 0.596);
+    margin-top: 200px;
+    border-radius: 30px;
+    padding: 20px;
+}
+#letter-block div:first-child{
+    font-family: 'Roboto';
+    font-size: 18pt;
+    color:  rgba(0, 0, 255, 0.664);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+#letter-block div:last-child{
+    margin-top: 40px;
+}
+.input-order{
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#btn-buy{
+    width: 150px;
+    padding: 10px;
+    font-family: 'Roboto';
+    font-size: 12pt;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(128, 128, 128, 0.418);
+    margin-left: 80px;
+}

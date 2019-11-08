@@ -120,7 +120,7 @@
                     <td>"
                     ?>
                         <form action='php/deleteFlights.php' method='post'>
-                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type="hidden" name="id" value="<? echo $row['Id'];?>">
                             <input type='submit' name='del' value='Видалити' class='btn-search'/>
                         </form>
                     <?

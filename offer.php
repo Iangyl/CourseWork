@@ -43,19 +43,7 @@
           <div id="search-block">
               <div class="h-block">Підбір квитків AirLine</div>
               <div>Підберемо найкращий квиток для вас!</div>
-              <div id="form-block">
-                  <form name="search" action="" method="post">
-                      <input class="input-control" type="text" name="depart" id="depart" placeholder="Місто відбуття"/>
-                      <input class="input-control" type="text" name="arrive" id="arrive" placeholder="Місто прибуття"/>
-                      <input class="input-control" type="date" name="date-depart" id="dateD"/>
-                      <input class="input-control" type="date" name="date-arrive" id="dateA"/></br>
-                      <input type="submit" name="submit" class="btn" id="btn-search" value="Знайти"/>
-                  </form>
-              </div>
-          </div>
-          <!--код php, який буде генерувати блоки в яких буде організована інформація про рейси-->
-          <!--облагородити для звіту різними фільтрами і тд(не факт, що будуть працювати, але байдуже - зато в ЗВІТІ буде :)  )-->
-          <div>
+              <div id='form-block'>
           <?php
                 $result = $pdo->query("SELECT flight.*,airlines.Name as 'air', plane.Model as 'Mod', service_class.service_class_name as 'serv',
                  cities.City_name, cities_second.city FROM flight inner join airlines on airlines.id=flight.ID_Airline
@@ -89,7 +77,7 @@
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "
-                    <tr class='table-data'><form action='' method='post'>
+                    <tr class='table-data'><form action='order.php' method='post'>
                     <td>{$row['Flight_number']}</td>
                     <td>{$row['City_name']}</td>
                     <td>{$row['city']}</td>
@@ -111,6 +99,7 @@
                 }
                 echo "</table>";
             ?>
+            </div>
           </div>
         </section>
         <footer>
