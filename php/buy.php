@@ -16,6 +16,6 @@ include "db.php";
         //echo $sql2;die();
         $stm2 = $pdo -> prepare($sql2);
         $stm2 -> execute($values);
-        echo "<script>location='../offer.php'</script>";
+        echo "<script>location='../view/offer.php'</script>";
     }
 ?>

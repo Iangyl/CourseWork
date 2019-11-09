@@ -15,7 +15,7 @@
         <header>
           <div>
             <div>
-                <span id="log-in-block"><a href="Autorization.php">Авторизація</a></span>
+                <span id="log-in-block"><a href="view/Autorization.php">Авторизація</a></span>
                 <div id="admin-icon">
                     <a href="Autorization.php"><img src="./pictures/adminTools.png" alt="icon.jpg"></a>
                 </div>          
@@ -30,9 +30,9 @@
             <nav>
               <ul id="nav-ul">
                 <li><a href="index.php" class="header-nav-text">ABOUT</a></li>
-                <li><a href="offer.php" class="header-nav-text">TICKETS</a></li>
-                <li><a href="information.php" class="header-nav-text">INFORMATION</a></li>
-                <li><a href="contact.php" class="header-nav-text">CONTACT US</a></li>
+                <li><a href="view/offer.php" class="header-nav-text">TICKETS</a></li>
+                <li><a href="view/information.php" class="header-nav-text">INFORMATION</a></li>
+                <li><a href="view/contact.php" class="header-nav-text">CONTACT US</a></li>
               </ul>
             </nav>
           </div>
@@ -183,13 +183,13 @@
             </li>
             <li>
               <div>
-                <a style="text-decoration: none; outline: none;" href="offer.php">
+                <a style="text-decoration: none; outline: none;" href="view/offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="./pictures/globe.png" alt="global.png">
                     <span>Пошук</br> авіаквитків</span>
                   </div>
                 </a>
-                <a style="text-decoration: none; outline: none;" href="contact.php">
+                <a style="text-decoration: none; outline: none;" href="view/contact.php">
                   <div id="footer-contact">
                     <img class="footer-img" src="./pictures/support.png" alt="support.png">
                     <span>Зв'яжіться з нами</span>
