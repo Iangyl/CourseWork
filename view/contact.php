@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,7 +47,7 @@
                     </div>
                     <div>
                         <input type="textarea" name="text" id="text-area" class="input-contact" placeholder="Все, що забажаєте:" /required>
-                        <input type="submit" name="submit" id="btn" />
+                        <input type="submit" name="submit" id="btn" value='Відправити'/>
                     </div>                                        
                 </form>
             </div>
@@ -80,7 +80,7 @@
                 <a style="text-decoration: none; outline: none;" href="offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="../pictures/globe.png" alt="global.png">
-                    <span>Пошук</br> авіаквитків</span>
+                    <span>Пошук<br/> авіаквитків</span>
                   </div>
                 </a>
                 <a style="text-decoration: none; outline: none;" href="contact.php">

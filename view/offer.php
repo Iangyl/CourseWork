@@ -1,6 +1,6 @@
 <?php require_once '../php/db.php'?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +90,7 @@
                     <td class='button-buy'>"
                         ?>
                             <input type="hidden" name="id" value="<? echo $row['Id'];?>">
-                            <input type='submit' name='buy' value='Деталі' class='btn-search'/>
+                            <input type='submit' name='buy' value='Придбати' class='btn-search'/>
                         </form>                        
                         <?
                         echo "
@@ -130,7 +130,7 @@
                 <a style="text-decoration: none; outline: none;" href="offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="../pictures/globe.png" alt="global.png">
-                    <span>Пошук</br> авіаквитків</span>
+                    <span>Пошук<br/> авіаквитків</span>
                   </div>
                 </a>
                 <a style="text-decoration: none; outline: none;" href="contact.php">

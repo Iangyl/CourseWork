@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
         </header>
         <section>
             <div id="quest-block">
-                <div class="h-block">Quest-тайм!</br>Як купувати авіаквитки дешево</div>
+                <div class="h-block">Quest-тайм!<br/>Як купувати авіаквитки дешево</div>
                 <div id="drop-listQuestions">
                     <ul class="list-style">
                         <li>
@@ -111,7 +111,7 @@
                 <a style="text-decoration: none; outline: none;" href="offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="../pictures/globe.png" alt="global.png">
-                    <span>Пошук</br> авіаквитків</span>
+                    <span>Пошук<br/> авіаквитків</span>
                   </div>
                 </a>
                 <a style="text-decoration: none; outline: none;" href="contact.php">

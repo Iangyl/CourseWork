@@ -1,6 +1,6 @@
 <?php require_once 'db.php'?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
                         <input name="civCode" type="text" class="input-order" placeholder="CIV" required/></br>
                         <?$fl_Id = $_POST['id'];?>
                         <input type="hidden" name="fl_id" value="<?echo $fl_Id;?>"/>
-                        <input type="submit" name="add" id="btn-buy" value="Придбати"/>            
+                        <input type="submit" name="add" id="btn-buy" onclick='alert("Дякуємо за покупку! Білет чекатиме вас на електронній пошті.")' value="Придбати"/>            
                     </form>
                 </div>
             </div>

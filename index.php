@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,28 +39,28 @@
         </header>
         <section>
           <div id="first-block">
-            <div class="h-block">Пошук дешевих квитків</br>AirLine</div>
+            <div class="h-block">Пошук дешевих квитків<br/>AirLine</div>
             <div>Переваги сервісу самостійного планування подорожей</div>
             <div id="block-of-benefits">
               <ul id="list-of-benefits">
                 <li><div class="class-of-benefits">
                   <img class="img-benefits" src="./pictures/PROFITABLE.png" alt="good.png"/>
                   <span class="circle-head">Це вигідно</span>
-                  <span class="text">Не потрібно переплачувати!</br> У нас немає націнки і комісії.</br> 
-                    Квиток на літак, підібраний за допомогою нашого сайту,</br>
+                  <span class="text">Не потрібно переплачувати!<br/> У нас немає націнки і комісії.<br/> 
+                    Квиток на літак, підібраний за допомогою нашого сайту,<br/>
                      ви купуєте за найкращою ціною.</span>
                 </div></li>
                 <li><div class="class-of-benefits">
                   <img class="img-benefits" src="./pictures/CONVENIENT.png" alt="convenient.png"/>
                   <span class="circle-head">Це зручно</span>
-                  <span class="text">Ви зможете знайти кращий квиток на літак!</br>
-                     Ми порівнюємо і аналізуємо ціни від багатьох авіакомпаній і пропонуємо найкращі пропозиції,</br>
+                  <span class="text">Ви зможете знайти кращий квиток на літак!<br/>
+                     Ми порівнюємо і аналізуємо ціни від багатьох авіакомпаній і пропонуємо найкращі пропозиції,<br/>
                      щоб ви змогли вибрати найоптимальніший квиток на зручний рейс.</span>
                 </div></li>
                 <li><div class="class-of-benefits">
                   <img class="img-benefits" src="./pictures/FAST.png" alt="FAST.PNG"/>
                   <span class="circle-head">Це швидко</span>
-                  <span class="text">Не витрачайте час</br> на моніторинг безлічі сайтів!</br>
+                  <span class="text">Не витрачайте час<br/> на моніторинг безлічі сайтів!<br/>
                      Всі найкращі авіапропозиції ви знайдете на нашому сайті.</span>
                 </div></li>
               </ul>
@@ -123,13 +123,13 @@
                       За короткий термін навряд чи можна встигнути сповна насолодитися транзитним містом,
                        але все ж побачити головні пам'ятки і покуштувати місцеві страви цілком реально.
                         Тим паче, що деякі авіакомпанії пропонують послугу stopover — безкоштовне проживання у гарному готелі та екскурсію.
-              </br>
-              </br>               
+              <br/>
+              <br/>               
                   Також зверніть увагу, що є агентства, які дозволяють резервування авіаквитків без оплати до 7 днів.
                    Тож ви можете зробити безкоштовне бронювання квитка онлайн зразу ж як знайдете кращу вартість,
                     а оплатити його вже потім.
-              </br>
-              </br>
+              <br/>
+              <br/>
                   З огляду на всі вищевикладені факти, радимо вам вже зараз почати шукати самі дешеві квитки на літак в країну своєї мрії.
                    Всього лише пару кліків - і яскрава подорож стає реальністю!
               </p>
@@ -147,7 +147,7 @@
                 <img class="img-paySystem" src="./pictures/mastercard.png" alt="visa.png">
               </li>
               <li>
-                <img class="img-paySystem" src="./pictures/mastercard (1).png" alt="visa.png">
+                <img class="img-paySystem" src="./pictures/maestro.png" alt="visa.png">
               </li>
               <li>
                 <img class="img-paySystem" src="./pictures/paypal.png" alt="visa.png">
@@ -186,7 +186,7 @@
                 <a style="text-decoration: none; outline: none;" href="view/offer.php">
                   <div id="footer-offer">
                     <img class="footer-img" src="./pictures/globe.png" alt="global.png">
-                    <span>Пошук</br> авіаквитків</span>
+                    <span>Пошк</br/> авіаквитків</span>
                   </div>
                 </a>
                 <a style="text-decoration: none; outline: none;" href="view/contact.php">

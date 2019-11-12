@@ -7,7 +7,8 @@ include "db.php";
         $stm -> execute($values);
 
 
-        /*$sql1 =  "UPDATE salesLog WHERE `ID_Flight` = {$_POST['fl_id']} SET `ID_Client` from clients WHERE clients.id = salesLog.id";
+        /*$sql1 =  "UPDATE salesLog SET ID_Client = (SELECT clients.id WHERE Full_name = '".$_POST['f_name']."')
+         WHERE ID_Flight = {$_POST['fl_id']}";
         //echo $sql1;die();
         $stm1 = $pdo->prepare($sql1);
         $stm1 ->execute($value);*/
