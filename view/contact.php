@@ -39,16 +39,11 @@
         </header>
         <section>
             <div id="contact-block">
-                <div class="h-block">Зв'яжіться з нами</div>
+                <div class="h-block">Залиште свої контакти для зв'язку</div>
                 <form name="contact" id="form-contact" action="" method="post">
-                    <div>
-                        <input type="text" name="name" id="name-contact" class="input-contact" placeholder="Ім'я" /required>
-                        <input type="email" name="mail" class="input-contact" id="email-contact" placeholder="E-mail" /required>
-                    </div>
-                    <div>
-                        <input type="textarea" name="text" id="text-area" class="input-contact" placeholder="Все, що забажаєте:" /required>
-                        <input type="submit" name="submit" id="btn" value='Відправити'/>
-                    </div>                                        
+                    <input type="text" name="name" id="name-contact" class="input-contact" placeholder="Ім'я" /required>
+                    <input type="email" name="mail" class="input-contact" id="email-contact" placeholder="E-mail" /required>
+                    <input type="submit" name="submit" id="btn" value='Відправити'/>                                       
                 </form>
             </div>
         </section>

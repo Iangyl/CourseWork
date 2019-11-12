@@ -200,30 +200,24 @@ section{
 #form-contact{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 50px;
     padding-bottom: 80px;
-}
-#form-contact div{
-    display: flex;
-    align-items: center;
 }
 #form-contact .input-contact{
     margin-top: 20px;
 }
 .input-contact{
     width: 400px;
-    margin-left: 180px;
+    margin-left: 0px;
     background-color: rgba(0, 255, 234, 0.158);
     padding: 20px;
     border: 1px solid black;
 }
-#text-area{
-    height: 100px;
-    text-align: left;
-}
 #btn{
     width: 250px;
-    margin-left: 180px;
+    margin-top: 40px;
     padding: 25px;
     font-family: 'Roboto';
     font-size: 12pt;
