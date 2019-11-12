@@ -21,6 +21,7 @@
                     <li><a href="adminFlights.php">Flight</a></li>
                     <li><a href="adminPlanes.php">Plane</a></li>
                     <li><a href="adminServiceClass.php">Service class</a></li>
+                    <li><a href="adminSales.php">Sales log</a></li>
                     <li><a href="../index.php">Exit</a></li> 
                 </ul>
             </nav>    

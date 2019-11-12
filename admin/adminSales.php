@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/reset.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/adminHomestyle.css" type="text/css" media="all">
-    <title>AdminService</title>
+    <title>AdminSale</title>
 </head>
 <body>
     <div id="container">
@@ -27,32 +27,40 @@
             </nav>    
         </aside>
         <article id="service-block" class="block">
-            <h2>Table: Service class</h2>
-            <h3 class="h3-fix">Insert</h3>
-            <form name="add_f" action="../php/insert/insertService.php" method="post" class="form-insert">
-                <div class="input-container">
-                    <ul class="input-list">
-                        <li>
-                            <input type="text" name="Class" placeholder="Клас" class="input-control extra-control" required/>
-                        </li>
-                    </ul>                    
-                    <button type="submit" name="add" class="btn">Вставити</button>
-                </div>
-            </form>
+            <h2>Table: Sales log</h2>
             <h3 class="h3-fix">Change/Delete</h3>
             <?php
-                $result = $pdo->query("select * from service_class");
+                $result = $pdo->query("select * from saleslog");
                 echo '<table>
                 <tr>
-                    <th>Id</th>
-                    <th>Клас обслуговування</th>
+                    <th>Клієнт</th>
+                    <th>Рейс</th>
+                    <th></th>
+                    <th></th>
                 </tr>';
                 while($row = $result->fetch(PDO::FETCH_LAZY))
                 {
                     echo "
-                    <tr>
-                    <td>{$row['ID']}</td>
-                    <td>{$row['service_class_name']}</td>
+                    <tr><form action='../php/change/changeSales.php' method='post'>
+                    <td><input type='text' name='id_client' class='input-control' value='{$row['ID_Client']}'></td>
+                    <td><input type='text' name='id_flight' class='input-control' value='{$row['ID_Flight']}'></td>
+                    <td>"
+                        ?>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='chg' value='Змінити' class='btn-search btn-center'/>
+                        </form>
+                        <?
+                        echo "
+                    </td>
+                    <td>"
+                    ?>
+                        <form action='../php/delete/deleteSales.php' method='post'>
+                            <input type="hidden" name="id" value="<? echo $row['ID'];?>">
+                            <input type='submit' name='del' value='Видалити' class='btn-search btn-center' />
+                        </form>
+                    <?
+                        echo "
+                    </td>
                     </tr>";
                 }
                 echo "</table>";
